@@ -34,5 +34,11 @@ module.exports = {
     postBtnExample: (req, res) => {
         const str = "My post attempt"
         res.status(200).send(str)
+    },
+
+    postNumBtn: (req, res) => {
+        let { num } = req.body
+        const str = `${num}`
+        res.status(200).send(str)
     }
 }
