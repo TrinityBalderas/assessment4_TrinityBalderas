@@ -1,4 +1,3 @@
-let baseId = 0;
 
 module.exports = {
 
@@ -27,23 +26,13 @@ module.exports = {
         res.status(200).send(url)
     },
 
-    getAttempt: (req,res) => {
-        const str = "Buttons are easier than lists"
+    putAttempt: (req,res) => {
+        const str = "Buttons are easy"
         res.status(200).send(str)
     },
 
-    getAttempt2: (req,res) => {
-        const str = "Buttons really are easier than lists"
+    postBtnExample: (req, res) => {
+        const str = "My post attempt"
         res.status(200).send(str)
-    },
-
-    getls: (req,res) => {
-        let { list } = req.body
-        baseId++
-        res.status(200).send(list)
-    },
-
-    delete: (req,res) => {
-        res.status(200).send(baseId)
     }
 }

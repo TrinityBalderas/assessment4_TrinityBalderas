@@ -1,9 +1,12 @@
 const complimentBtn = document.getElementById("complimentButton");
+
 const fortuneBtn = document.getElementById("fortuneButton");
-const popUp = document.getElementById("popUp")
-const attemptBtn = document.getElementById("attempt")
-const attempt2Btn = document.getElementById("attempt2")
-const lsBox = document.getElementById("ls")
+
+const popUp = document.getElementById("popUp");
+
+const attemptBtn = document.getElementById("attempt");
+
+const postBtn = document.getElementById("postExample")
 
 const getCompliment = () => {
     axios.get("http://localhost:4000/api/compliment/")
@@ -29,50 +32,24 @@ const getPopUp = () => {
         })
 }
 
-const getAttemptBtn = () => {
-    axios.get("http://localhost:4000/api/attempt/")
-    .then(res => {
-        const data = res.data
-        alert(data)
-    })
-}
-const getAttempt2Btn = () => {
-    axios.get("http://localhost:4000/api/attempt2/")
+const putAttemptBtn = () => {
+    axios.put("http://localhost:4000/api/attempt/")
     .then(res => {
         const data = res.data
         alert(data)
     })
 }
 
-const getls = () => {
-    axios.get("http://localhost:4000/api/ls/")
-    .then(res => {
-        const data = res.data
-    })
-    displayLs(data)
-}
-
-const deletels = () => {
-    axios.revome(`http://localhost:4000/api/ls/${data}`)
-    .then(res => {
-        const data = re.data
-    })
-}
-const displayLs = (str) => {
-    lsBox.innerHTML = ""
-    const list = document.createElement(div)
-    list.innerHTML =
-    `
-    <ul class="list">
-        <li>${str}</li>
-    </ul>
-    `
-    lsBox.appendChild(list)
+const postBtnExample = () => {
+    axios.post("http://localhost:4000/api/postExample")
+        .then(res => {
+            const data = res.data
+            alert(data)
+        })
 }
 
 complimentBtn.addEventListener('click', getCompliment)
 fortuneBtn.addEventListener('click', getFortune)
 popUp.addEventListener('click', getPopUp)
-attemptBtn.addEventListener('click', getAttemptBtn)
-attempt2Btn.addEventListener('click', getAttempt2Btn)
-lsBox.addEventListener('submit', displayLs)
+attemptBtn.addEventListener('click', putAttemptBtn)
+postBtn.addEventListener('click', postBtnExample)

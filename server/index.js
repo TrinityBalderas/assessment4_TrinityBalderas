@@ -16,13 +16,10 @@ app.get("/api/fortune", getFortune)
 const { getPopUp } = require('./controller')
 app.get("/api/popUp", getPopUp)
 
-const { getAttempt } = require('./controller')
-app.get("/api/attempt", getAttempt)
+const { putAttempt } = require('./controller')
+app.put("/api/attempt", putAttempt)
 
-const { getAttempt2 } = require('./controller')
-app.get("/api/attempt2", getAttempt2)
-
-const{ getls } = require('./controller')
-app.get("/api/ls", getls)
+const { postBtnExample } = require('./controller')
+app.post("/api/postExample", postBtnExample)
 
 app.listen(4000, () => console.log("Server running on 4000"));
